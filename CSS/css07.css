@@ -1,0 +1,137 @@
+.banner {
+    height: 100px;
+    background-image: url("../Images/backgrd.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: yellow;
+    text-shadow: 5px 5px 5px red;
+}
+
+.header {
+    background-color: rgb(3, 201, 169);
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    height: 25px;
+
+}
+
+.btn {
+    display: inline-flex;
+    background-color: rgb(4, 147, 114);
+    color: white;
+    border: 0;
+    height: 25px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 5px;
+}
+
+.btn:hover {
+    background-color: rgb(3, 166, 120);
+}
+
+.dropDownList .content {
+    display: none;
+    background-color: rgb(3, 201, 169);
+
+}
+
+.dropDownList:hover .content {
+    display: block;
+}
+
+.dropDownList .content a {
+    display: block;
+    padding-left: 10px;
+    margin-top: 1px;
+    position: relative;
+    margin-inline: 0px;
+    
+}
+
+
+.body {
+    display: flex;
+    height: 80vh;
+    z-index: 1;
+
+}
+
+.body-left {
+    background-color: #c5eff7;
+    width: 20%;
+}
+
+
+#title {
+    display: flex;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding-block: 5px;
+    margin-block: 10px;
+}
+
+#content {
+    padding-left: 20px;
+}
+
+.body-center {
+    width: 60%;
+    overflow: scroll;
+    padding-left: 10px;
+
+}
+
+.body-center .content {
+    width: 45%;
+    height: 45%;
+    overflow: scroll;
+    float: left;
+    margin: 5px;
+    border: solid 1px;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+.body-center .content:nth-of-type(3) {
+    clear: left;
+}
+
+
+
+.body-right {
+    background-color: #c5eff7;
+    width: 20%;
+}
+
+.body-right .ads{
+    display: flex;
+    width: 80%;
+    height: 15%;
+    background-color: #fff9de;
+    margin: 20px;
+    border-radius: 20px;
+    justify-content: center;
+    padding-top: 20px;
+    border: solid 1px;
+    box-shadow: 4px 4px gray;
+}
+
+.footer {
+    height: 10vh;
+    background-color: blue;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
