@@ -1,0 +1,86 @@
+
+
+@keyframes banner-background {
+    0%{background-color: #FAD8D6;}
+    25%{background-color: #B9E4C9;}
+    50%{background-color: #E6E6FA;}
+    75%{background-color: #AFCBFF;}
+    100%{background-color: #FFF9B0;}
+}
+@keyframes banner-font-size {
+    0%{font-size: small;}
+    20%{font-size: medium;}
+    40%{font-size: large;}
+    60%{font-size: large;}
+    80%{font-size: medium;}
+    100%{font-size: small;}
+}
+@keyframes image-box {
+   0%{background-image: url(../Images/1.jpg);}
+   20%{background-image: url(../Images/2.jpg);}
+   40%{background-image: url(../Images/3.jpg);}
+   60%{background-image: url(../Images/4.jpg);}
+   80%{background-image: url(../Images/5.jpg);}
+   100%{background-image: url(../Images/5.jpg);}
+}
+@keyframes rotate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.banner{
+    background-color: antiquewhite;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: banner-background 2.5s linear infinite;
+}
+p {
+    font-weight: bold;
+    text-shadow: 1px 3px 3px #aaa;
+    animation: banner-font-size 2.5s linear infinite;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.container div{
+    width: 200px;
+    height: 200px;
+    background-color: #aaa;
+    display: inline-flex;
+    margin-inline: 20px;
+    color: gold;
+    font-size: xx-large;
+    align-items: center;
+    justify-content: center;
+}
+
+div.container div:nth-of-type(1){
+    border: solid 2px red;
+    animation: image-box 4s linear infinite;
+}
+
+div.container div:nth-of-type(2){
+    border: dashed 5px rgb(54, 21, 214) ;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: cyan;
+}
+
+div.container div:nth-of-type(3){
+    border: dashed 3px rgb(214, 21, 185) ;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: cyan;
+}
+
+div.container div:nth-of-type(4){
+    border: solid 2px gold;
+    background-color: #298a4d;
+    animation: rotate 3s linear infinite
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diễn đàn CNTT</title>
+    <meta charset="UTF-8">
+    <style>
+        li.parent {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        li.child-first {
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 align="center">BÀI KIỂM TRA CHƯƠNG 2</h1>
+    <div align="center">
+        <b>Môn học: </b><i>Ứng dụng Web</i><br>
+        <b>Mã số sinh viên: </b><i>2151013009</i><br>
+        <b>Họ và tên: </b><i>Dương Thanh Bình</i>
+    </div>
+    <hr size="3" color="blue">
+
+    <div align="center">
+        <a href="#">Trang chủ</a>
+        <a href="#">Nội dung môn học</a>
+        <a href="#">Đăng ký</a>
+    </div>
+
+    <h1 align="center">ĐĂNG KÝ THAM GIA DIỄN ĐÀN</h1>
+
+    <div align="center">
+        <form action="#">
+            <table border="1" style="width: 40%; background-color: yellow;">
+                <tr>
+                    <td>Tên đăng nhập:</td>
+                    <td>
+                        <input placeholder="Nhập tên đăng nhập" type="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu:</td>
+                    <td>
+                        <input type="password" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giới tính:</td>
+                    <td>
+                        <input required value="male" type="radio" checked><label>Nam</label>
+                        <input value="female" type="radio"><label>Nữ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh:</td>
+                    <td>
+                        <input required type="date">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        <input required type="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngôn ngữ lập trình yêu thích:</td>
+                    <td>
+                        <input list="subject">
+                        <datalist id="subject">
+                            <option>C++</option>
+                            <option>C#</option>
+                            <option>PHP</option>
+                            <option>Java</option>
+                            <option>Python</option>
+                        </datalist>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quy định khi tham gia diễn đàn</td>
+                    <td>
+                        <textarea rows="5" style="width: 99%;">Bài viết phải nghiêm túc, không chứa quảng cáo, không có nội dung phản cảm</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit"><img src="../Images/registry.png" width="100px"></button>
+                        <button type="reset"><img src="../Images/cancel.png" width="100px"></button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+    </div>
+
+</body>
+
+</html>
