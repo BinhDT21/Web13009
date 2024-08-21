@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JQuery 04</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div").click(function () {
+                var color = $(this).css("background-color")
+                var name
+                switch (color) {
+                    case 'rgb(255,0,0)':
+                        name = "Đỏ"
+                        break;
+                    case 'rgb(0,0,255)':
+                        name = "Xanh dương"
+                        break;
+                    case 'rgb(0,255,0)':
+                        name = "Xanh lá"
+                        break;
+                    default:
+                        name = "Tím"
+                        break;
+                }
+                $("#result").html("Màu bạn chọn là " + name + ": " + color)
+                $("#result").css({'color':color, 'font-weight':'bold'})
+            })
+        })
+    </script>
+    <style>
+        div {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            float: left;
+        }
+
+        #result {
+            clear: left;
+            width: 500px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Click lên các hình vuông: </p>
+    <div style="background-color:blue"></div>
+    <div style="background-color:red"></div>
+    <div style="background-color:fuchsia"></div>
+    <div style="background-color:green"></div>
+    <br>
+    <div id="result"></div>
+</body>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>JQuery 01</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function insert () {
+            var mh = $("#txtMonHoc").val()
+            if(mh.trim() != "")
+            {
+                var str ="<li>" + mh + "</li>"
+                $("ul").append(str);
+            }
+            $("#txtMonHoc").val("")
+        }
+
+        $(document).ready(function(){
+            $("button").click(function(){
+                insert()
+            })
+            $("#txtMonHoc").change(function(){
+                insert()
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <input type="text" id="txtMonHoc"/>
+    </p>
+    <ul>
+        <li>Python</li>
+        <li>PHP</li>
+    </ul>
+    <p>
+        <button>thêm môn học</button>
+    </p>
+</body>
