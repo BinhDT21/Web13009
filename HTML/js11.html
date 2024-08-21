@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 11</title>
+
+    <style>
+        .container {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Image Resizing</h1>
+        <hr>
+        <p>
+            Scale:
+            <input onchange="resize()" type="radio" checked name="size-btn" value="1"><label>10%</label>
+            <input onchange="resize()"  type="radio" name="size-btn" value="2"><label>25%</label>
+            <input onchange="resize()" type="radio" name="size-btn" value="3"><label>50%</label>
+        </p>
+        <div>
+            <img id="image" src="../Images/6.jpg" style="width: 10%;height: 10%;">
+        </div>
+    </div>
+
+    <script>
+
+        function resize() {
+            var btnValue = document.querySelector("input[name='size-btn']:checked").value
+            switch (btnValue) {
+                case "1":
+                    document.getElementById('image').style.width = '10%'
+                    document.getElementById('image').style.height = '10%'
+                    break;
+                case "2":
+                    document.getElementById('image').style.width = '25%'
+                    document.getElementById('image').style.height = '25%'
+                    break;
+                default:
+                    document.getElementById('image').style.width = '50%'
+                    document.getElementById('image').style.height = '50%'
+                    break;
+            }
+        }
+
+        // document.getElementsByName('size-btn').addEventListener("change",resize)
+
+    </script>
+</body>

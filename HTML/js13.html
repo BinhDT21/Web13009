@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 12</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container div {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-block: 20px;">
+        Nhập các giá trị: <input value="20,50,70,80,30" id="arrValue"> <button onclick="draw()">Draw chart</button>
+    </div>
+
+    <p align="center">Pie chart</p>
+    <div class="container">
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        let myChart;
+        function draw() {
+            const ctx = document.getElementById('myChart');
+            var s = document.getElementById('arrValue').value
+            var arr = s.split(',')
+
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: arr,
+                    datasets: [{
+                        label: '# of Votes',
+                        data: arr,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+    </script>
+
+</body>

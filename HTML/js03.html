@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 03</title>
+    <style>
+        table{
+            background-color: #ffffcc;
+            width: 50%;
+        }
+        table td {
+            padding: 10px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+
+        .result {
+            width: 60%;
+            margin-top: 10px;
+            margin-left: 400px;
+        }
+    </style>
+    <script src="../JS/js03.js"></script>
+</head>
+
+<body>
+    <h1 align="center">CHƯƠNG TRÌNH GIẢI PHƯƠNG TRÌNH BẬC 2</h1>
+    <h3 align="center">ax<sup>2</sup>+bx+c=0</h3>
+
+    <div class="container">
+        <table border="1" cellspacing="0px">
+            <tr>
+                <td>a =</td>
+                <td><input id="ipA" required></td>
+            </tr>
+            <tr>
+                <td>b =</td>
+                <td><input id="ipB" required></td>
+            </tr>
+            <tr>
+                <td>c =</td>
+                <td><input id="ipC" required></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button onclick="cal()">Giải</button>
+                    <button onclick="remove()">Xóa</button>
+                </td>
+            </tr>
+
+        </table>
+        
+    </div>
+    <div class="result">
+        <b id="as"></b><br>
+        <b id="rs1"></b><br>
+        <b id="rs2"></b><br>
+    </div>
+</body>

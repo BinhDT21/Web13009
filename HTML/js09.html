@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 09</title>
+
+    <style>
+        .container {
+            padding: 10px;
+        }
+
+        input {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        Nhập số phần tử: <input value="5" id="nb"><br>
+        <div style="margin-top: 5px;">
+            <button onclick="createArray ()">Tạo mảng</button>
+            <button onclick="sortAsc ()">Sắp xếp mảng tăng</button>
+            <button onclick="sortDesc()">Sắp xếp mảng giảm</button>
+        </div>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+
+    </div>
+
+    <script>
+        let myArr = []
+        function createArray() {
+            var p1 = document.getElementById('p1')
+            var number = parseInt(document.getElementById('nb').value)
+            var arr = []
+            var s1 = ''
+            for (i = 0; i < number; i++) {
+                arr[i] = Math.round(Math.random() * 50)
+            }
+
+            s1 = arr.join(" ")
+
+            p1.innerHTML = s1
+            myArr = arr
+        }
+
+        function compare (a,b) {
+            return a-b
+        }
+        function compare2 (a,b) {
+            return b-a
+        }
+        function sortAsc() {
+            var arr = []
+            var s2 = ''
+            arr = myArr.sort(compare)
+            s2 = arr.join(" ")
+            document.getElementById('p2').innerHTML = s2
+        }
+        function sortDesc() {
+            var arr = []
+            var s3 =' '
+            arr = myArr.sort(compare2)
+            s3 = arr.join(' ')
+            document.getElementById('p3').innerHTML = s3
+        }
+    </script>
+</body>

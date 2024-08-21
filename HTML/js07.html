@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 07</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center" id="scrollText">&nbsp;CHƯƠNG&nbsp;TRÌNH&nbsp;XỬ&nbsp;LÝ&nbsp;CHUỖI</h1>
+
+    <div class="container">
+        <table>
+            <tr>
+                <td>Chuỗi S1</td>
+                <td>
+                    <input id="s1" size="50" value="Learning JAVASCRIPT is veRy easy">
+                </td>
+            </tr>
+            <tr>
+                <td>Chuỗi S2: </td>
+                <td>
+                    <input id="s2" size="50" value="javascript">
+                </td>
+            </tr>
+            <tr>
+                <td>Chuỗi S3: </td>
+                <td>
+                    <input id="s3" size="50" value="jQuery">
+                </td>
+            </tr>
+            <tr>
+                <td>Vị trí chèn: </td>
+                <td>
+                    <input id="insertId" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button onclick="normalText()">Chuẩn hóa chuỗi</button>
+                    <button onclick="reverseText()">Đảo chuỗi</button>
+                    <button onclick="restore ()">Khôi phục</button><br>
+                    <button onclick="replaceText()">Thay thế S2 bằng S3</button>
+                    <button onclick="insertText()">Chèn S2 vào S1</button>
+                    <button onclick="removeText()">Xóa S2 trong S1</button>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script>
+
+        const restoreValue = document.getElementById('s1').value
+
+        function scrollText() {
+            const myText = document.getElementById('scrollText')
+            const text = myText.innerText
+            myText.innerText = text.substr(1, text.length) + text.substr(0, 1);
+        }
+
+        function normalText() {
+            const s1 = document.getElementById('s1')
+            let text = s1.value
+
+            var arrText = text.split(/\s+/).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
+            s1.value = arrText.trim()
+        }
+
+        function reverseText() {
+            const s1 = document.getElementById('s1')
+            let text = s1.value
+
+            var arrText = text.split(/\s+/).reverse()
+
+            s1.value = arrText.join(' ')
+        }
+
+        function restore() {
+            document.getElementById('s1').value = restoreValue
+        }
+
+        function replaceText() {
+            var s1 = document.getElementById('s1').value.toLowerCase()
+            var s2 = document.getElementById('s2').value.toLowerCase()
+            var s3 = document.getElementById('s3').value
+
+            s1 = s1.replace(s2, s3)
+
+            document.getElementById('s1').value = s1
+        }
+
+        function insertText() {
+            var s1 = document.getElementById('s1').value
+            var s2 = document.getElementById('s2').value
+
+            var id = parseInt(document.getElementById('insertId').value)
+
+            s1 = s1.substr(0,id) + s2 + s1.substr(id)
+            
+            document.getElementById('s1').value = s1
+        }
+
+        function removeText(){
+            var s1 = document.getElementById('s1').value
+            var s2 = document.getElementById('s2').value
+            var id = s1.toLowerCase().indexOf(s2.toLowerCase())
+            s1 = s1.toLowerCase().replace(s2,"")
+            document.getElementById('s1').value = s1
+        }
+
+        setInterval(scrollText, 300)
+    </script>
+</body>

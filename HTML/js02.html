@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 02</title>
+</head>
+
+<body>
+
+    <h1 id="date"></h1>
+    <h2 id="currentDate"></h2>
+    <h3 id="time"></h3>
+    <button onclick="showCurrentDate()">Xem ngày giờ</button>
+
+    <script>
+        month = prompt("Nhập tháng")
+        year = prompt("Nhập năm", "2000")
+        date = 0
+        switch (month) {
+            case '1':
+                date = 31
+                break;
+            case '2':
+                if (parseInt(year) % 4 == 0 && parseInt(year) % 100 == 0 && parseInt(year) % 400 == 0) {
+                    date = 29
+                } else {
+                    date = 28
+                }
+                break;
+            case '3':
+                date = 31
+                break;
+            case '4':
+                date = 30
+                break;
+            case '5':
+                date = 31
+                break;
+            case '6':
+                date = 30
+                break;
+            case '7':
+                date = 31
+                break;
+            case '8':
+                date = 31
+                break;
+            case '9':
+                date = 30
+                break;
+            case '10':
+                date = 31
+                break;
+            case '11':
+                date = 30
+                break;
+            default:
+                date = 30
+                break;
+        }
+
+        document.getElementById('date').innerHTML = "Tháng " + month + " năm " + year + " có " + date + " ngày"
+
+
+        function showCurrentDate() {
+            var currentDate = new Date()
+            crtMonth = currentDate.getMonth() + 1
+            document.getElementById('currentDate').innerHTML = "Hôm nay, thứ " + currentDate.getDay() + " ngày " + currentDate.getDate() + "/" + crtMonth + "/" + currentDate.getFullYear()
+            document.getElementById('time').innerHTML = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds()
+        }
+        
+        function show() {
+            alert(date)
+        }
+    </script>
+</body>

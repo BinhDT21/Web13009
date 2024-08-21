@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 10</title>
+
+    <style>
+        .banner {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            background-color: red;
+
+        }
+
+        .banner-script {
+            font-weight: bold;
+            font-size: 5cap;
+            color: yellow;
+        }
+
+        .container {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .container div {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner" id="banner">
+        <span id="banner-script" class="banner-script">WELCOME HTML5!</span>
+    </div>
+
+    <div class="container">
+        <div>
+            Nhập nội dung: <input id="ip-script" size="30" value="WELCOME HTML5!">
+        </div>
+        <div>
+            Màu nền: <input type="color" id="bg-cl">
+        </div>
+        <div>
+            Màu chữ: <input type="color" id="txt-cl">
+        </div>
+
+        <button onclick="excecute()">Thực hiện</button>
+    </div>
+
+
+
+    <script>
+        function excecute() {
+            var ipScript = document.getElementById('ip-script').value
+            var banner = document.getElementById('banner')
+            var bnScript = document.getElementById('banner-script')
+            var bnColor = document.getElementById('bg-cl')
+            var scriptColor = document.getElementById('txt-cl')
+            
+            bnScript.innerHTML = ipScript
+            banner.style.backgroundColor = bnColor.value
+            bnScript.style.color = scriptColor.value
+        }
+    </script>
+</body>

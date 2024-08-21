@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 06</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            width: 30%;
+        }
+
+        td {
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">ĐĂNG KÝ THÀNH VIÊN</h1>
+    <div class="container">
+        <form>
+            <table border="1" cellspacing="0">
+
+                <tr>
+                    <td>Tên đăng nhập</td>
+                    <td>
+                        <input required name="username" size="30" type="text" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu</td>
+                    <td>
+                        <input required size="30" type="password" id="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh</td>
+                    <td>
+                        <input required name="dob" type="date" id="dob">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giới tính</td>
+                    <td>
+                        <input type="radio" name="gender" value="Nam" checked>
+                        <lable>Nam</lable>
+
+                        <input type="radio" name="gender" value="Nữ">
+                        <lable>Nữ</lable>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vấn đề bạn quan tâm</td>
+                    <td>
+                        <select name="problem">
+                            <option selected>Kinh tế</option>
+                            <option>Thể thao</option>
+                            <option>Văn học nghệ thuật</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button onclick="showInfo()">Đăng ký</button></td>
+                    <td><button type="reset">Hủy</button></td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="2">
+                        <textarea id="textArea" cols="60" rows="5"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search)
+        const currentDate = new Date()
+        let content = ''
+
+        function showInfo() {
+
+            let dob = new Date(document.getElementById('dob').value)
+            let name = document.getElementById('username').value
+            let password = document.getElementById('password').value
+            let gender = params.get('gender')
+            let age = currentDate.getFullYear() - dob.getFullYear()
+            let problem = document.querySelector("select").value
+
+            content = `Chào mừng ${name}\nBạn là ${gender}\nMật khẩu của bạn có ${password.length} ký tự\nTuổi của bạn là ${age}\nVấn đề bạn quan tâm là ${problem}`
+
+            let myTextArea = document.getElementById('textArea')
+            myTextArea.value = content
+            event.preventDefault()
+        }
+    </script>
+</body>

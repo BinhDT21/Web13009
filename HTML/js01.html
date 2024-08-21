@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 01</title>
+    <style>
+        button {
+            margin-block: 10px;
+        }
+    </style>
+    <script>
+        function calYear() {
+            var currentDate = new Date()
+            var yob = document.getElementById('ipYOB').value
+            var yearOld = currentDate.getFullYear() - parseInt(yob)
+            document.getElementById('answer').innerHTML = "Tuổi của bạn là " + yearOld
+        }
+        function display() {
+            calYear()
+            var name = document.getElementById('ipName').value
+            document.getElementById('welcome').innerHTML = "Chào bạn " + name
+        }
+    </script>
+</head>
+
+<body>
+    <h1>CHƯƠNG TRÌNH TÍNH TUỔI</h1>
+    <table border="1">
+        <tr>
+            <td>Nhập vào tên bạn:</td>
+            <td>
+                <input id="ipName" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Nhập vào năm sinh:</td>
+            <td>
+                <input id="ipYOB" required>
+            </td>
+        </tr>
+    </table>
+
+    <button onclick="display()">Tính tuổi</button>
+
+    <br><span id="welcome"></span>
+    <br><span id="answer"></span>
+</body>

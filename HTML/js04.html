@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 04</title>
+    <script src="../JS/js04.js"></script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            margin-top: 30px;
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" align="center">
+        <table border="1">
+            <tr>
+                <td colspan="2" style="text-align: center; padding-block: 10px;">
+                    <b>CÁC PHÉP TÍNH SỐ HỌC</b>
+                </td>
+            </tr>
+            <tr>
+                <td>Số thứ 1</td>
+                <td>
+                    <input id="a">
+                </td>
+            </tr>
+            <tr>
+                <td>Số thứ 2</td>
+                <td>
+                    <input id="b">
+                </td>
+            </tr>
+            <tr>
+                <td>Chọn phép toán</td>
+                <td>
+                    <input type="radio" name="operation" checked value="1">
+                    <label>Cộng</label><br>
+
+                    <input type="radio" name="operation" value="2">
+                    <label>Trừ</label><br>
+
+                    <input type="radio" name="operation" value="3">
+                    <label>Nhân</label><br>
+
+                    <input type="radio" name="operation" value="4">
+                    <label>Chia</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="cal()">Thực hiện</button>
+                </td>
+                <td><input  type="text" id="rs"></td>
+            </tr>
+
+
+        </table>
+    </div>
+</body>

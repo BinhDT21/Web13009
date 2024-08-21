@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS 05</title>
+
+    <style>
+        table{
+            width: 40%;
+        }
+        table td{
+            padding-left: 10px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">BẢNG CỬU CHƯƠNG</h1>
+
+
+    <div class="container">
+        <table id="myTable" border="1"></table>
+    </div>
+
+
+    <script>
+        function createTable() {
+            let myTable = document.getElementById('myTable')
+
+            for (i = 2; i <= 9; i+=4) {
+                let row = document.createElement('tr')
+                for (j = i; j < i+4; j++) {
+                    let content = ''
+                    let cell = document.createElement('td')
+                    for (k = 2; k <= 9; k++) {
+                        let rs = j * k
+                        content += `${j} x ${k} = ${rs} \n`
+                    }
+                    cell.innerText = content
+                    row.appendChild(cell)
+                }
+
+                myTable.appendChild(row)
+
+            }
+
+        }
+
+        createTable()
+    </script>
+</body>
